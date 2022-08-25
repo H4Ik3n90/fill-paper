@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Layout = () => {
+const AddNote = () => {
     return (
         <div>
-            
+            <h1>Add Note</h1>
         </div>
     );
 }
 
-export default Layout;
+export default AddNote;
