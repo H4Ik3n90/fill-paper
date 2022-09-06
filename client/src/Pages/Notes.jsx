@@ -1,12 +1,20 @@
 import React from 'react';
 
 import Card from '../Components/Card';
+import Button from '../Components/Button';
 
-const Notes = () => {
+const Notes = ({click}) => {
     return (
-        <div className='bg-plain'>
-            <Card />
-        </div>
+        <>
+            <title>Fill Paper | Notes</title>
+            <div className='p-7 h-screen grid grid-cols-4 gap-0'>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Button click={click} />
+            </div>
+        </>
     );
 }
 
