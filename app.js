@@ -4,6 +4,11 @@ const router = require('./routes/UserRoute');
 
 const app = express();
 
+app.use(
+    cors({
+        origin: "http://localhost:3000"
+    })
+);
 app.use(router);
 
 app.listen(5000 ,() => {

@@ -7,7 +7,7 @@ const Notes = ({click}) => {
     return (
         <>
             <title>Fill Paper | Notes</title>
-            <div className='p-7 h-screen grid grid-cols-4 gap-0'>
+            <div className='overflow-scroll p-7 h-screen grid grid-cols-4 gap-0'>
                 <Card />
                 <Card />
                 <Card />
