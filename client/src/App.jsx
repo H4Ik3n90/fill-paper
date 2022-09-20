@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {Route,Routes,useParams} from 'react-router-dom';
+import {Route,Routes} from 'react-router-dom';
 
 import Sidebar from './Components/Sidebar';
 import Notes from './Pages/Notes';
@@ -25,8 +25,6 @@ const App = () => {
     useEffect(() => {
         getData();
     }, []);
-
-    console.log(useParams);
 
     return (
         <div className='flex'>

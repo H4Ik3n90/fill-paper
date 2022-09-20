@@ -3,12 +3,12 @@
         {
             "id": 1,
             "title": "first note",
-            "note": "I don't really have will to live, so I want do suicide immediately"
+            "note": "This is first note"
         },
         {
             "id": 2,
             "title": "second note",
-            "note": "This world is nearly the end"
+            "note": "This is second note"
         }
     ]
 }
