@@ -1,15 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
+const fs = require('fs').promises;
 
-router.get('/', (req,res) => {
-    res.json({id: 1, name: 'daffa'});
-});
-
-router.post('/notes', (req,res) => {
-    console.log('Hello');
-
-    res.redirect('/notes');
+router.get('/notes', (req,res) => {
+    fs.readFile('./data/test.json', 'utf-8')
+        .then((data) => {
+            return res.send(JSON.parse(data));
+        });
 });
 
 module.exports = router;

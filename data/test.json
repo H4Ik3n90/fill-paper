@@ -1,1 +1,14 @@
-{"name":"daffa"}
+{
+    "notes": [
+        {
+            "id": 1,
+            "title": "first note",
+            "note": "I don't really have will to live, so I want do suicide immediately"
+        },
+        {
+            "id": 2,
+            "title": "second note",
+            "note": "This world is nearly the end"
+        }
+    ]
+}

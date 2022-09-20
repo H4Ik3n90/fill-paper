@@ -32,7 +32,7 @@ const CurrentLink = ({to,width,height,file,text}) => {
     
     return(
         <Link to={to}>
-            <div className={`${urlPath === to ? "bg-ligthblue" : ""} flex mt-2 duration-200 hover:bg-lightblue ml-2 mr-2 rounded pt-2 pb-2 pl-5`}>
+            <div className={`${urlPath === to ? "bg-lightblue" : ""} flex mt-2 duration-200 hover:bg-lightblue ml-2 mr-2 rounded pt-2 pb-2 pl-5`}>
                 <img src={file} alt="fill_paper_logo" width={width} height={height}/>
                 <h1 className={`text-white text-xl ml-10 mr-2`}>{text}</h1>
             </div>
