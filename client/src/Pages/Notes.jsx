@@ -4,8 +4,6 @@ import Card from '../Components/Card';
 import Button from '../Components/Button';
 
 const Notes = ({click,userData}) => {
-    console.log(userData);
-
     return (
         <>
             <title>Fill Paper | Notes</title>

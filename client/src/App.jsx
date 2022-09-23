@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,lazy,Suspense} from 'react';
 import {Route,Routes} from 'react-router-dom';
 
 import Sidebar from './Components/Sidebar';
-import Notes from './Pages/Notes';
+const Notes = lazy(() => import('./Pages/Notes'));
+const Trash = lazy(() => import('./Pages/Trash'));
 import Popup from './Components/Popup';
-import Trash from './Pages/Trash';
 
 const App = () => {
     const [addShow,setAddShow] = useState(false);
@@ -31,12 +31,14 @@ const App = () => {
             <Sidebar />
             {add} 
             <main className='flex-1'>
-                <Routes>
-                    {notesData && <Route path={`/notes`} element={
-                        <Notes click={() => setAddShow(!addShow)} userData={notesData} />
-                    } />}
-                    <Route path='/trash' element={<Trash />} />
-                </Routes>
+                <Suspense fallback={<div>Loading....</div>}>
+                    <Routes>
+                        {notesData && <Route path={`/notes`} element={
+                            <Notes click={() => setAddShow(!addShow)} userData={notesData} />
+                        } />}
+                        <Route path='/trash' element={<Trash />} />
+                    </Routes>
+                </Suspense>
             </main>
         </div>
     );
