@@ -1,0 +1,16 @@
+GET http://localhost:3000/notes 
+
+###
+
+POST http://localhost:3000/notes/add 
+Content-Type: application/json
+
+{
+    "id": 1,
+    "title": "First note",
+    "body": "This is first note"
+}
+
+### 
+
+DELETE http://localhost:3000/notes
