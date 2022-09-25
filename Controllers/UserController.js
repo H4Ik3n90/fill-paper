@@ -20,6 +20,14 @@ const postNote = (req,res) => {
     res.send('Hello');
 };
 
+const updateNote = (req,res) => {
+    notesPaper.update({
+        where: {
+            id: req.body.id 
+        }
+    })
+};
+
 const deleteNote = (req,res) => {
     notesPaper.destroy({
         where: {
@@ -37,5 +45,6 @@ const deleteNote = (req,res) => {
 module.exports = {
     postNote,
     getAllNote,
+    updateNote,
     deleteNote
 }
