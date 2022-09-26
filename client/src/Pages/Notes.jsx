@@ -24,7 +24,7 @@ const Notes = ({click,userData}) => {
     return (
         <>
             <title>Fill Paper | Notes</title>
-            {addShow && <Popup close={() => popUp()} titleContent={updateData.title} bodyContent={updateData.body} 
+            {addShow && <Popup close={() => popUp()} idContent={updateData.id} titleContent={updateData.title} bodyContent={updateData.body} 
                 Submit={'Save'} 
             />}
             <div className='flex-1'>

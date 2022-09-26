@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Popup = ({close,style,titleContent,bodyContent,Submit}) => {
+const Popup = ({close,style,idContent,titleContent,bodyContent,Submit}) => {
     const [titlenone,setTitleNone] = useState();
     const [notenone,setNoteNone] = useState();
     
@@ -14,17 +14,27 @@ const Popup = ({close,style,titleContent,bodyContent,Submit}) => {
 
     const autoHideTitle = (e) => {
         e.currentTarget.textContent.length === 0 ? setTitleNone('') : setTitleNone('hidden');
-        setTitle(e.currentTarget.textContent);
+        
+        if(titleContent === '') {
+            setTitle(e.currentTarget.textContent);
+        }else {
+            setTitle(titleContent && e.currentTarget.textContent);
+        }
     }
 
     const autoHideNote = (e) => {
         e.currentTarget.textContent.length === 0 ? setNoteNone('') : setNoteNone('hidden');
-        setBody(e.currentTarget.textContent);
+        
+        if(bodyContent === '') {
+            setBody(e.currentTarget.textContent);
+        }else {
+            setBody(bodyContent && e.currentTarget.textContent);
+        }
     }
 
     const postData = (e) => {
         fetch('http://localhost:3000/notes', {
-            method: 'post',
+            method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({title: title, body: body})
         })
@@ -38,14 +48,13 @@ const Popup = ({close,style,titleContent,bodyContent,Submit}) => {
         })
     };
 
-    const updateNote = () => {
-        fetch(`http://localhost:3000/notes/${updateData.id}`, {
-            method: 'put',
+    const updateNote = (e) => {
+        fetch(`http://localhost:3000/notes/${idContent}`, {
+            method: 'PUT',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                id: updateData.id,
-                title: titleContent,
-                body: bodyContent
+                title: title,
+                body: body
             })
         })
             .then(res => {

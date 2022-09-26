@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const Card = ({title,note,id,updateNote}) => {
     const delData = () => {
         fetch(`http://localhost:3000/notes/${id}`, {
-            method: "delete",
+            method: "DELETE",
         })
         .then(() => {
             window.location.reload();
