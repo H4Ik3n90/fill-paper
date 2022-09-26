@@ -8,17 +8,16 @@ import Popup from './Components/Popup';
 
 const App = () => {
     const [addShow,setAddShow] = useState(false);
-    const [notesData,setNotesData] = useState(null);
+    const [notesData,setNotesData] = useState(' ');
 
-    let add = addShow === true ? <Popup close={() => setAddShow(!addShow)}/> : '';
+    const up = 'duration-150 scale-100';
+    const down = 'duration-150 scale-0';
 
     const getData = () => {
         fetch('http://localhost:3000/notes')
-            .then((res) => {
-                return res.json();
-            })
-            .then((res) => {
-                setNotesData(res.notes);
+            .then(res => res.json())
+            .then(data => {
+                setNotesData(data);
             });
     };
 
@@ -29,11 +28,13 @@ const App = () => {
     return (
         <div className='flex'>
             <Sidebar />
-            {add} 
+            {addShow && <Popup style={addShow === true ? up : down} close={() => setAddShow(!addShow)}/>} 
             <main className='flex-1'>
                 <Suspense fallback={<div>Loading....</div>}>
                     <Routes>
-                        {notesData && <Route path={`/notes`} element={
+                        {notesData === null ? <Route path={`/notes`} element={
+                            <Notes click={() => setAddShow(!addShow)} userData={notesData} />
+                        } /> : notesData && <Route path={`/notes`} element={
                             <Notes click={() => setAddShow(!addShow)} userData={notesData} />
                         } />}
                         <Route path='/trash' element={<Trash />} />

@@ -4,7 +4,7 @@ const { postNote, getAllNote, updateNote, deleteNote } = require('../controllers
 
 router.get('/notes', getAllNote);
 
-router.post('/notes/', postNote);
+router.post('/notes', postNote);
 
 router.put('/notes/:id', updateNote);
 

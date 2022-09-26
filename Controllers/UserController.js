@@ -1,4 +1,4 @@
-const { sequel,notesPaper } = require('../model/UserModel.js');
+const { sequel, notesPaper } = require('../model/UserModel.js');
 
 const getAllNote = (req,res) => {
     notesPaper.findAll()
@@ -12,7 +12,6 @@ const getAllNote = (req,res) => {
 
 const postNote = (req,res) => {
     notesPaper.create({
-        id: req.body.id,
         title: req.body.title,
         body: req.body.body 
     })
@@ -21,21 +20,29 @@ const postNote = (req,res) => {
 };
 
 const updateNote = (req,res) => {
-    notesPaper.update({
-        where: {
-            id: req.body.id 
+    notesPaper.update(
+        {
+            title: req.body.title,
+            body: req.body.body 
+        },
+        {
+            where: {
+                id: req.params.id 
+            }
         }
-    })
+    )
 };
 
 const deleteNote = (req,res) => {
     notesPaper.destroy({
         where: {
-            id: req.body.id
+            id: req.params.id
         }
     })
     .then(() => {
         console.log("Successfully deleted");
+
+        res.sendStatus(200);
     })
     .catch(err => {
         console.log("Unable to delete field in table: ",err);

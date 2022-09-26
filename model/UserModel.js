@@ -21,6 +21,7 @@ const notesPaper = sequel.define("notes_paper", {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
     },
     title: {
         type: DataTypes.STRING,

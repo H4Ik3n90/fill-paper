@@ -5,7 +5,7 @@ const Popup = ({close,style}) => {
     const [notenone,setNoteNone] = useState();
     
     const [title,setTitle] = useState();
-    const [note,setNote] = useState();
+    const [body,setBody] = useState();
 
     const autoHideTitle = (e) => {
         e.currentTarget.textContent.length === 0 ? setTitleNone('') : setTitleNone('hidden');
@@ -14,33 +14,27 @@ const Popup = ({close,style}) => {
 
     const autoHideNote = (e) => {
         e.currentTarget.textContent.length === 0 ? setNoteNone('') : setNoteNone('hidden');
-        setNote(e.currentTarget.textContent);
+        setBody(e.currentTarget.textContent);
     }
 
     const postData = async (e) => {
-        e.preventDefault();
-
-        fetch('http://localhost:3000/notes/coba', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                
-            },
-            body: JSON.stringify({title: title, note: note})
+        fetch('http://localhost:3000/notes', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({title: title, body: body})
         })
         .then(res => {
-            if(res.status === 200) {
+            if(res) {
                 setTitle("");
-                setNote("");
-                console.log('Post note succesfully');
+                setBody("");    
             }else {
-                console.log("There's an error occured");
+                console.log("An error occured");
             }
-        });
+        })
     };
 
     return (
-        <div onClick={close} className='duration-300 z-10 flex justify-center items-center absolute h-screen w-screen bg-semi-black'>
+        <div onClick={close} className={`${style} duration-300 z-10 flex justify-center items-center absolute h-screen w-screen bg-semi-black`}>
             <form onSubmit={(e) => postData(e)} onClick={(e) => e.stopPropagation()} className={`${style} relative w-1/2 rounded-lg bg-white`}>
                 <div className={`absolute z-0 ${titlenone} text-2xl text-slate-400 rounded-lg p-3 pl-4`}>Title</div>
                 <div contentEditable='true' 
@@ -53,7 +47,7 @@ const Popup = ({close,style}) => {
                     className={`rounded-lg p-3 pl-4 text-lg focus:outline-none break-words h-auto`}
                 ></div>
                 <div className='w-full h-auto mt-1 pr-7'>
-                    <button type='submit' className='bg-ligthblue text-white text-lg rounded border-[#00B4EE] border float-right p-1'>save</button>
+                    <button type='submit' className='bg-ligthblue text-white text-lg rounded border-[#00B4EE] border float-right p-1'>Add</button>
                 </div>
             </form>
         </div>
