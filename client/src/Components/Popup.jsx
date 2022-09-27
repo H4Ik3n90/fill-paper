@@ -88,7 +88,7 @@ const Popup = ({close,style,idContent,titleContent,bodyContent,Submit}) => {
                     className={`rounded-lg p-3 pl-4 text-lg focus:outline-none break-words h-auto`}
                 >{bodyContent}</div>
                 <div className='w-full h-auto mt-1 pr-7'>
-                    <button type='submit' className='bg-ligthblue text-white text-lg rounded border-[#00B4EE] border float-right p-1'>{Submit}</button>
+                    <button type='submit' className='bg-ligthblue text-white text-lg rounded border-md-blue bg-md-blue border float-right p-1'>{Submit}</button>
                 </div>
             </form>
         </div>
