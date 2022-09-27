@@ -28,7 +28,7 @@ const Notes = ({click,userData}) => {
                 Submit={'Save'} 
             />}
             <div className='flex-1'>
-                <div className='overflow-y-scroll p-7 h-screen grid grid-cols-4 gap-0'>
+                <div className='overflow-y-scroll p-7 h-screen grid grid-cols-4 gap-2'>
                     {userData.map(item => 
                         <Card key={item.id} title={item.title} note={item.body} id={item.id}
                             updateNote={() => popUp(item.id,item.title,item.body)}    

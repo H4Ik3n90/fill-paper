@@ -1,5 +1,6 @@
 import React,{useState,useEffect,lazy,Suspense} from 'react';
 import {Route,Routes} from 'react-router-dom';
+import {useTransition,animated} from 'react-spring'
 
 import Sidebar from './Components/Sidebar';
 const Notes = lazy(() => import('./Pages/Notes'));
@@ -9,6 +10,7 @@ import Popup from './Components/Popup';
 const App = () => {
     const [addShow,setAddShow] = useState(false);
     const [notesData,setNotesData] = useState(' ');
+    const animation = useTransition()
 
     const getData = () => {
         fetch('http://localhost:3000/notes')
@@ -27,7 +29,9 @@ const App = () => {
             <Sidebar />
             {addShow && <Popup close={() => setAddShow(!addShow)} titleContent={''} bodyContent={''} 
                 Submit={'Add'} 
-            />} 
+            >
+                {animation(() => addShow ===)}
+            </Popup>} 
             <Suspense fallback={<div>Loading....</div>}>
                 <Routes>
                     {notesData === null ? <Route path={`/notes`} element={
