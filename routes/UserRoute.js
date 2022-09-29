@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { postNote, getAllNote, updateNote, deleteNote } = require('../controllers/UserController.js');
+const { register, getUser, getAllNote, postNote, updateNote, deleteNote } = require('../controllers/UserController.js');
+
+router.get('/signup', getUser);
+
+router.post('/signup', register)
 
 router.get('/notes', getAllNote);
 
