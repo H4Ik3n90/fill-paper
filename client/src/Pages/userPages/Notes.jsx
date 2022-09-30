@@ -21,6 +21,8 @@ const Notes = ({click,userData}) => {
         setAddShow(!addShow)
     };
 
+    
+
     return (
         <>
             <title>Fill Paper | Notes</title>

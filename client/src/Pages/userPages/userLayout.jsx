@@ -1,10 +1,10 @@
 import React,{useState,useEffect,lazy,Suspense} from 'react';
 import {Route,Routes} from 'react-router-dom';
 
-import Sidebar from './Components/Sidebar';
-const Notes = lazy(() => import('./userPages/Notes'));
-const Trash = lazy(() => import('./userPages/Trash'));
-import Popup from './Components/Popup';
+import Sidebar from '../../Components/Sidebar';
+const Notes = lazy(() => import('./Notes'));
+const Trash = lazy(() => import('./Trash'));
+import Popup from '../../Components/Popup';
 
 const userLayout = () => {
     const [addShow,setAddShow] = useState(false);
