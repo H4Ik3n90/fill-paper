@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Card from '../Components/Card';
-import Button from '../Components/Button';
-import Popup from '../Components/Popup';
+import Card from '../../Components/Card';
+import Button from '../../Components/Button';
+import Popup from '../../Components/Popup';
 
 const Notes = ({click,userData}) => {
     const [addShow, setAddShow] = useState(false);
@@ -34,8 +34,8 @@ const Notes = ({click,userData}) => {
                             updateNote={() => popUp(item.id,item.title,item.body)}    
                         />
                     )}
-                    <Button click={click}/>
                 </div>
+                <Button click={click}/>
             </div>
         </>
     );

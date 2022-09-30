@@ -3,8 +3,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const user_fill_paper = "FILL_PAPER_ACCESS"
 
-console.log('h')
-
 const register = async (req,res) => {
     const {id,username,email,password} = req.body;
     
