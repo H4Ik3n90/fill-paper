@@ -5,7 +5,7 @@ import UserLayout from './Pages/userPages/userLayout';
 const App = () => {
     return (
         <>
-            <UserLayout />
+            
         </>
     );
 }

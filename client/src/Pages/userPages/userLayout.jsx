@@ -30,11 +30,7 @@ const userLayout = () => {
             />}
             <Suspense fallback={<div>Loading....</div>}>
                 <Routes>
-                    {notesData === null ? <Route path={`/notes`} element={
-                        <Notes click={() => setAddShow(!addShow)} userData={notesData} />
-                    } /> : notesData && <Route path={`/notes`} element={
-                        <Notes click={() => setAddShow(!addShow)} userData={notesData} />
-                    } />}
+                    <Route path='/notes' element={<Notes click={() => setAddShow(!addShow)} userData={notesData} />} />
                     <Route path='/trash' element={<Trash />} />
                 </Routes>
             </Suspense>

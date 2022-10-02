@@ -39,11 +39,13 @@ const getUser = async (req,res) => {
     res.json(userData);
 };
 
-const postNote = () => {
+const getAllNote = async (req,res) => {
+    const getData = await prisma.notes.findMany();
 
+    res.status(200).json(getData);
 };
 
-const getAllNote = () => {
+const postNote = () => {
 
 };
 

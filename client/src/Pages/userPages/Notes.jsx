@@ -21,7 +21,13 @@ const Notes = ({click,userData}) => {
         setAddShow(!addShow)
     };
 
-    
+    let cardData;
+
+    if(userData === []) {
+        cardData = '';
+    }else {
+        cardData = userData.map(item => <Card key={item.id} title={item.title} note={item.body} id={item.id} updateNote={() => popUp(item.id,item.title,item.body)} />);
+    }
 
     return (
         <>
@@ -31,11 +37,7 @@ const Notes = ({click,userData}) => {
             />}
             <div className='flex-1'>
                 <div className='overflow-y-scroll p-7 h-screen grid grid-cols-4 gap-2'>
-                    {userData.map(item => 
-                        <Card key={item.id} title={item.title} note={item.body} id={item.id}
-                            updateNote={() => popUp(item.id,item.title,item.body)}    
-                        />
-                    )}
+                    {cardData}
                 </div>
                 <Button click={click}/>
             </div>
