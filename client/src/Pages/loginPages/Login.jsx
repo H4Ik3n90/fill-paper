@@ -31,7 +31,10 @@ const Login = () => {
                     <label className={`${isPass} absolute duration-350 left-4 top-2 text-md text-silver`}>Password</label>
                 </div>
                 <button className='border border-blue-md bg-blue-md p-1 text-lg text-white w-80 rounded'>Login</button>
-                
+                <p className='text-md'>
+                    Don't have account?
+                    <Link to='/signup' className='text-md text-blue-md hover:text-blue-light'> signup</Link>
+                </p>
             </form>
         </div>
     );

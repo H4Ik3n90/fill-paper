@@ -1,15 +1,16 @@
-import React, {lazy,Suspense,useState,useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import { Route, Routes } from 'react-router-dom';
+import loadable from '@loadable/component';
 
 import Popup from './Components/Popup';
 
 import UserLayout from './Pages/userPages/userLayout';
-const Notes = lazy(() => import('./Pages/userPages/Notes'));
-const Trash = lazy(() => import('./Pages/userPages/Trash'));
+const Notes = loadable(() => import('./Pages/userPages/Notes'));
+const Trash = loadable(() => import('./Pages/userPages/Trash'));
 
 import LoginLayout from './Pages/loginPages/loginLayout';
-const Login = lazy(() => import('./Pages/loginPages/Login'));
-const Signup = lazy(() => import('./Pages/loginPages/Signup'));
+const Login = loadable(() => import('./Pages/loginPages/Login'));
+const Signup = loadable(() => import('./Pages/loginPages/Signup'));
 
 const App = () => {
     const [notesData,setNotesData] = useState(' ');
