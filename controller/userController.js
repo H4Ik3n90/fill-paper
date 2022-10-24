@@ -1,7 +1,7 @@
 const { prisma } = require('../model/UserModel.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const user_fill_paper = "FILL_PAPER_ACCESS"
+const user_fill_paper = "FILL_PAPER_ACCESS";
 
 const register = async (req,res) => {
     const {id,username,email,password} = req.body;
@@ -45,8 +45,17 @@ const getAllNote = async (req,res) => {
     res.status(200).json(getData);
 };
 
-const postNote = () => {
+const postNote = async (req,res) => {
+    const {title,body} = req;
 
+    const postData = await prisma.notes.create({
+        data: {
+            title: title,
+            body: body
+        }
+    });
+
+    res.sendStatus(201);
 };
 
 const updateNote = () => {

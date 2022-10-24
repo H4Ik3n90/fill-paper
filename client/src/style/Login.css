@@ -1,0 +1,43 @@
+.login-page {
+    @apply flex-1 
+}
+
+.title-welcome {
+    @apply text-3xl text-center pt-20 pb-2
+}
+
+.title-slogan {
+    @apply text-center pb-2 text-silver
+}
+
+.login-form {
+    @apply flex flex-col justify-around pt-[2%] items-center h-[33%]
+}
+
+.input-container {
+    @apply relative h-auto
+}
+
+.email {
+    @apply border h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-email {
+    @apply absolute  left-4 top-2 text-silver
+}
+
+.password {
+    @apply border h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-password {
+    @apply absolute left-4 top-2 text-silver
+}
+
+.submit {
+    @apply border border-blue-md bg-blue-md p-1 text-lg text-white w-80 rounded
+}
+
+.signup-link {
+    @apply text-blue-md hover:text-blue-light
+}
