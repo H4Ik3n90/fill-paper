@@ -7,13 +7,9 @@ const Login = () => {
     const [isEmail,setIsEmail] = useState();
     const [isPass,setIsPass] = useState();
 
-    const emailHidden = (e) => {
-        e.target.value.length === 0 ? setIsEmail('') : setIsEmail('hidden');
-    };
+    const emailHidden = (e) => e.target.value.length === 0 ? setIsEmail('') : setIsEmail('hidden');
 
-    const pwdHidden = (e) => {
-        e.target.value.length === 0 ? setIsPass('') : setIsPass('hidden');
-    };
+    const pwdHidden = (e) => e.target.value.length === 0 ? setIsPass('') : setIsPass('hidden');
 
     return (
         <div className='login-page'>

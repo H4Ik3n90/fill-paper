@@ -7,11 +7,11 @@ module.exports = {
     extend: {
       colors: {
         "silver": "#A9A9A9",
-        "blue-smooth": "#F9FBFF",
+        "blue-smooth": "#F7FAFF",
         "blue-light": "#4D94FF",
+        "blue-dark": "#0F2039",
+        "blue-dark-light": "#1C3B69",
         "blue-md": "#3F8CFF",
-        "md-blue": "#4D82FF",
-        "dk-blue": "#151B2B",
         "semi-black": "rgba(0,0,0,0.3)"
       }
     },

@@ -1,28 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-const Card = ({title,note,id,updateNote}) => {
-    const delData = () => {
-        fetch(`http://localhost:3000/notes/${id}`, {
-            method: "DELETE",
-        })
-        .then(() => {
-            window.location.reload();
-        });
-    };
-
+const Card = ({show}) => {
     return (
-        <div onClick={updateNote} className='relative bg-white overflow-auto duration-300 border-2 cursor-pointer rounded hover:drop-shadow-lg p-4 h-56 w-60 overflow-hidden'>
-            <div>
-                {title}
+        <div className={`flex flex-col border-y pt-4 pb-4 ${show === false ? "scale-x-0" : "delay-300"}`}>
+            <div className='flex mb-2'>
+                <div className='ml-5'>
+                    <h3 className='text-md'><b>Judul</b></h3>
+                    <p className='text-sm'>Apaan ini body nya kok kosong gini dawdaw</p>
+                </div>
             </div>
-            <div>
-                {note}
-            </div>
-            <div className='absolute right-2 bottom-2' onClick={(e) => e.stopPropagation()}>
-                <img src="/Images/delete.svg" alt="delete" width={16} height={16}
-                    onClick={() => delData()}
-                />
-            </div>
+            <p className='text-[0.7em] ml-5'>27/12/2020</p>
         </div>
     );
 }
