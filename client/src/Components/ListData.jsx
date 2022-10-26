@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Card from '../Components/Card';
+import Searchbar from './Searchbar';
 
 const ListData = () => {
     const [show,setShow] = useState(true);
@@ -11,6 +12,7 @@ const ListData = () => {
     return (
         <div className={`${show === false ? "w-0" : "w-[28%]"} bg-blue-smooth duration-200`}>
             <h1 className={`pl-5 pt-3 text-[1.4em] ${show === false ? "scale-x-0" : "delay-300"}`}><b>Notes</b></h1>  
+            <Searchbar show={show} />
             <p className={`text-sm ml-5 mt-8 ${show === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p> 
             <div className='mt-2'>
                 <Card show={show} />

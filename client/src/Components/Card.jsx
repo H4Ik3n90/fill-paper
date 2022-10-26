@@ -6,7 +6,7 @@ const Card = ({show}) => {
             <div className='flex mb-2'>
                 <div className='ml-5'>
                     <h3 className='text-md'><b>Judul</b></h3>
-                    <p className='text-sm'>Apaan ini body nya kok kosong gini dawdaw</p>
+                    <p className='text-sm'>Another note application for just for demo</p>
                 </div>
             </div>
             <p className='text-[0.7em] ml-5'>27/12/2020</p>

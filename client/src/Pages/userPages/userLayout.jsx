@@ -7,10 +7,7 @@ const userLayout = () => {
     return (
         <div className='flex'>
             <Sidebar />
-            <Suspense fallback={<div>Loading....</div>}>
-                <Outlet />
-            </Suspense>
-            
+            <Outlet />
         </div>
     );
 }
