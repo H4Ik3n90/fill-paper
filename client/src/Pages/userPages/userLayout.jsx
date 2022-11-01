@@ -3,10 +3,10 @@ import {Outlet} from 'react-router-dom';
 
 import Sidebar from '../../Components/Sidebar';
 
-const userLayout = () => {
+const userLayout = ({showSidebar,setShowSidebar}) => {
     return (
         <div className='flex'>
-            <Sidebar />
+            <Sidebar show={showSidebar} setShowSidebar={setShowSidebar} />
             <Outlet />
         </div>
     );

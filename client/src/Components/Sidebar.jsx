@@ -1,11 +1,19 @@
+// import some dependencies
 import React, { useState } from 'react';
 import { Link,useLocation } from 'react-router-dom';
 
+// import style
 import '../style/Sidebar.css';
 
+// import some svg files 
+import pencil from '../Images/sideBar/pencil.svg';
+import showBar from '../Images/sideBar/show_bar_double.svg';
+
 const Sidebar = () => {
+    // hide status
     const [hide,setHide] = useState(false);
 
+    // trigger hide 
     const hideSidebar = () => {
         setHide(!hide);
     };
@@ -15,15 +23,21 @@ const Sidebar = () => {
             <div className='flex mt-2'>
                 <h1 className={`text-white text-2xl mt-2 ml-8 duration-200`}></h1>
             </div>
-            <CurrentLink to="/notes" width={17} height={17} text="Notes" file="/Images/pencil.svg"/>
+
+            {/* link to pages */}
+            <CurrentLink to="/notes" width={17} height={17} text="Notes" file={pencil}/>
+
+            {/* sidebar showbar */}
             <div className='ml-6 mt-5' onClick={() => hideSidebar()}>
-                <img src="/Images/show_bar_double.svg" alt="show_bar" className={`${hide === false ? "rotate-180" : ""} duration-200 cursor-pointer`} />
+                <img src={showBar} alt="show_bar" className={`${hide === false ? "rotate-180" : ""} duration-200 cursor-pointer`} />
             </div>
         </div>
     );
 }
 
+// 
 const CurrentLink = ({to,width,height,file,text}) => {
+    // get current url
     const urlPath = useLocation().pathname;
     
     return(

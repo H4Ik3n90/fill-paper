@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import ListData from '../../Components/ListData';
 import NoteContent from '../../Components/NoteContent';
 
-const Notes = () => {
+const Notes = ({showList,setShowList}) => {
     return (
         <>
-            <ListData />               
-            <NoteContent />
+            <title>Fill Paper | Notes</title>
+            <ListData showList={showList} setShowList={setShowList}/>               
+            <NoteContent showList={showList} setShowList={setShowList}/>
         </>
     );
 }
