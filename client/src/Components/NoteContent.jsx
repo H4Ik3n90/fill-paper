@@ -22,17 +22,17 @@ const NoteContent = ({showList,setShowList}) => {
 
     return (
         <div className='h-screen flex-1'>
-            {/* Note Content Container */}
-            <div className='h-[93%] relative'>
-                {/* content div */}
-                <div onInput={(e) => hideTitlelabel(e)} contentEditable="true" className='focus-within:outline-none absolute z-10 h-[8%] w-[100%] pt-2 pl-7 pb-2 text-2xl font-bold mt-4'></div>
-                <div onInput={(e) => hideTextlabel(e)} contentEditable="true" className='focus-within:outline-none absolute z-10 h-[87%] w-[100%] pt-2 pl-7 pb-2 text-lg mt-[4.4rem] overflow-y-scroll'></div>
-                
+            {/* Note Content Title Container */}
+            <div className="h-[15%] relative flex flex-col">
+                <div onInput={(e) => hideTitlelabel(e)} contentEditable className={`w-[100%] absolute pt-2 pl-7 pb-2 text-2xl font-bold break-words`}></div>
+                <p className={`${hideTitle === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-2xl font-bold`}>Title</p>
+            </div>
 
-                {/* label div */}
-                <p className={`${hideTitle === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-2xl font-bold mt-4`}>Title</p>
-                <p className={`${hideText === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-lg mt-[4.4rem]`}>Type here to start write</p>
-                
+            {/* Note Content Title Container */}
+            <div className='h-[78%] relative overflow-y-scroll scrollbar-hide flex flex-col'>
+                {/* content div */}
+                <div onInput={(e) => hideTextlabel(e)} contentEditable className='w-[100%] absolute pt-2 pl-7 pb-2 text-lg break-words'></div>
+                <p className={`${hideText === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-lg`}>Type here to start write</p>
             </div>
 
             {/* edit note */}
