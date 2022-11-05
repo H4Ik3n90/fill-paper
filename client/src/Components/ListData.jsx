@@ -17,12 +17,12 @@ const ListData = ({showList,setShowList}) => {
             <Searchbar show={showList} />
             
             {/* header note container */}
-            <div className='row-span-2'>
+            <div className='relative'>
                 {/* amount of notes */}
-                <p className={`col-auto text-sm pl-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p>
+                <p className={`text-sm pl-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p>
 
                 {/* add note button */}
-                <img src={addNote} alt="add" />
+                <img src={addNote} alt="add" className='absolute right-0' />
             </div>
 
             {/* list of notes */}
