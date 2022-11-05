@@ -21,38 +21,25 @@ const NoteContent = ({showList,setShowList}) => {
     };
 
     return (
-        <div className='h-screen flex-1'>
+        <div className='flex-1 w-[100%] '>
             {/* Note Content Title Container */}
-            <div className="h-[15%] relative flex flex-col">
-                <div onInput={(e) => hideTitlelabel(e)} contentEditable className={`w-[100%] absolute pt-2 pl-7 pb-2 text-2xl font-bold break-words`}></div>
+            <div className="relative flex flex-col w-[100%]">
+                <div onInput={(e) => hideTitlelabel(e)} contentEditable className={`w-[100%] pt-2 pl-7 pb-2 text-2xl font-bold break-words`}></div>
                 <p className={`${hideTitle === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-2xl font-bold`}>Title</p>
             </div>
 
             {/* Note Content Title Container */}
-            <div className='h-[78%] relative overflow-y-scroll scrollbar-hide flex flex-col'>
+            <div className='relative flex flex-col'>
                 {/* content div */}
-                <div onInput={(e) => hideTextlabel(e)} contentEditable className='w-[100%] absolute pt-2 pl-7 pb-2 text-lg break-words'></div>
+                <div onInput={(e) => hideTextlabel(e)} contentEditable className='w-[100%] pt-2 pl-7 pb-2 text-lg overflow-y-scroll break-words'></div>
                 <p className={`${hideText === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-lg`}>Type here to start write</p>
             </div>
 
-            {/* edit note */}
-            <div className={`h-[7%] ${showList === true ? "" : "pl-[4%]"} border-t flex`}>
+            {/* edit note container */}
+            <div className='absolute bottom-0 w-[100%]1 h-[7%] border-t bg-black'>
                 {/* edit text container */}
-                <div className={`${showList === true ? "" : "border-l"} flex mt-2 mb-2`}>
-                    {/* bold container */}
-                    <div className='hover:bg-blue-md mt-[0.16rem] rounded p-1 ml-3 duration-150 cursor-pointer'>
-                        <Bold className="h-[90%] w-[90%]" /> 
-                    </div>
-
-                    {/* italic container */}
-                    <div className='hover:bg-blue-md mt-[0.16rem] rounded p-1 ml-3 duration-150 cursor-pointer'>
-                        <Italic className="h-[90%] w-[90%]" />
-                    </div>
-
-                    {/* underline container */}
-                    <div className='hover:bg-blue-md mt-[0.20rem] rounded p-1 ml-3 duration-150 cursor-pointer'>
-                        <Underline className="h-[93%] w-[93%]"/>
-                    </div>
+                <div className={`${showList === true ? "" : "pl-[4%]"}`}>
+                    
                 </div>
             </div>
         </div>
