@@ -29,7 +29,7 @@ const App = () => {
                     <Route path='notes' element={<Notes showList={show} setShowList={() => showEvent()} />} />
                 </Route>
 
-                {/* login page route */}
+                {/* login page route*/}
                 <Route path='/' element={<LoginLayout />}>
                     <Route path='login' element={<Login />}/>
                     <Route path='signup' element={<Signup />}/>

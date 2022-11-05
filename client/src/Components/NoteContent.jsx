@@ -21,28 +21,44 @@ const NoteContent = ({showList,setShowList}) => {
     };
 
     return (
-        <div className='flex-1 w-[100%] '>
-            {/* Note Content Title Container */}
-            <div className="relative flex flex-col w-[100%]">
-                <div onInput={(e) => hideTitlelabel(e)} contentEditable className={`w-[100%] pt-2 pl-7 pb-2 text-2xl font-bold break-words`}></div>
-                <p className={`${hideTitle === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-2xl font-bold`}>Title</p>
-            </div>
+        <form className='flex flex-col flex-1 h-screen'>
+            <div className='h-[93%] w-[100%] overflow-y-scroll scrollbar-hide'>
+                {/* Note Content Title Container */}
+                <div className="relative flex flex-col">
+                    <div onInput={(e) => hideTitlelabel(e)} contentEditable className={`w-[100%] pt-2 pl-7 pb-2 text-2xl font-bold break-words scrollbar-hide`}></div>
+                    <p className={`${hideTitle === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-2xl font-bold`}>Title</p>
+                </div>
 
-            {/* Note Content Title Container */}
-            <div className='relative flex flex-col'>
-                {/* content div */}
-                <div onInput={(e) => hideTextlabel(e)} contentEditable className='w-[100%] pt-2 pl-7 pb-2 text-lg overflow-y-scroll break-words'></div>
-                <p className={`${hideText === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-lg`}>Type here to start write</p>
+                {/* Note Content Title Container */}
+                <div className='relative flex flex-col'>
+                    <div onInput={(e) => hideTextlabel(e)} contentEditable className='w-[100%] pt-2 pl-7 pb-2 text-lg overflow-y-scroll break-words scrollbar-hide'></div>
+                    <p className={`${hideText === true ? "hidden" : ""} absolute -z-10 pt-2 pl-7 pb-2 text-lg`}>Type here to start write</p>
+                </div>
+
+                
             </div>
 
             {/* edit note container */}
-            <div className='absolute bottom-0 w-[100%]1 h-[7%] border-t bg-black'>
-                {/* edit text container */}
-                <div className={`${showList === true ? "" : "pl-[4%]"}`}>
-                    
+            <div className='bottom-0 w-[100%]1 h-[7%] border-t'>
+                {/* text transform */}
+                <div className={`${showList === true ? "" : "ml-10 border-l"} flex mb-2 mt-2 mr-5 pl-2`}>
+                    {/* Bold */}
+                    <div className='hover:bg-blue-md p-2 rounded'>
+                        <Bold />
+                    </div>
+
+                    {/* Italic */}
+                    <div className='hover:bg-blue-md p-2 rounded'>
+                        <Italic />
+                    </div>
+
+                    {/* Underline */}
+                    <div className='hover:bg-blue-md p-2 rounded'>
+                        <Underline />
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     );
 }
 

@@ -4,19 +4,26 @@ import Searchbar from './Searchbar';
 
 // import some svg 
 import showBar from '../Images/listData/show_bar_single.svg';
+import addNote from '../Images/noteEdit/add.svg';
 
 const ListData = ({showList,setShowList}) => {
 
     return (
-        <div className={`${showList === false ? "w-0" : "w-[28%]"} relative bg-blue-smooth duration-200`}>
+        <div className={`${showList === false ? "w-0" : "w-[28%]"} relative bg-blue-smooth duration-200 cursor-pointer`}>
             {/* list data title */}
             <h1 className={`pl-5 pt-3 text-[1.4em] ${showList === false ? "scale-x-0" : "delay-300"}`}><b>Notes</b></h1>  
 
             {/* search */}
             <Searchbar show={showList} />
+            
+            {/* header note container */}
+            <div className='row-span-2'>
+                {/* amount of notes */}
+                <p className={`col-auto text-sm pl-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p>
 
-            {/* sum of notes */}
-            <p className={`text-sm ml-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p> 
+                {/* add note button */}
+                <img src={addNote} alt="add" />
+            </div>
 
             {/* list of notes */}
             <div className='mt-2'>

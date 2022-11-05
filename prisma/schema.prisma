@@ -10,13 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       String  @id @default(uuid())
-  username String  @unique
-  email    String  @unique
-  password String
-  Notes    Notes[]
-}
+// model User {
+//   id       String  @id @default(uuid())
+//   username String  @unique
+//   email    String  @unique
+//   password String
+//   Notes    Notes[]
+// }
 
 model Notes {
   id        String   @id @default(uuid())
@@ -24,6 +24,6 @@ model Notes {
   body      String
   createdAt DateTime
   updateAt  DateTime
-  writter   User     @relation(fields: [userId], references: [id])
+  // writter   User     @relation(fields: [userId], references: [id])
   userId    String
 }
