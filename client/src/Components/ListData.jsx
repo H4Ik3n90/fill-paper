@@ -22,7 +22,7 @@ const ListData = ({showList,setShowList}) => {
                 <p className={`text-sm pl-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 Notes</p>
 
                 {/* add note button */}
-                <img src={addNote} alt="add" className='absolute right-0' />
+                <img src={addNote} alt="add" className='absolute right-4 bottom-0' />
             </div>
 
             {/* list of notes */}

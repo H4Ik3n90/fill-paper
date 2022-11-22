@@ -10,6 +10,9 @@ const NoteContent = ({showList,setShowList}) => {
     const [hideTitle,setHideTitle] = useState(false);
     const [hideText,setHideText] = useState(false);
 
+    // get text in note body
+    const [selectedText,setSelectedText] = useState('');
+
     // hide title label while content exist
     const hideTitlelabel = (e) => {
         e.currentTarget.textContent.length === 0 ? setHideTitle(false) : setHideTitle(true);
@@ -43,7 +46,7 @@ const NoteContent = ({showList,setShowList}) => {
                 {/* text transform */}
                 <div className={`${showList === true ? "" : "ml-10 border-l"} flex mb-2 mt-2 mr-5 pl-2`}>
                     {/* Bold */}
-                    <div className='hover:bg-blue-md p-2 rounded'>
+                    <div className='hover:bg-blue-md active:bg-blue-md p-2 rounded'>
                         <Bold />
                     </div>
 
