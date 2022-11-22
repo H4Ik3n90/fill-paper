@@ -1,0 +1,55 @@
+.signup-page {
+    @apply flex-1 
+}
+
+.title-signup {
+    @apply text-3xl mb-[7%] text-center pt-20 pb-2
+}
+
+.signup-form {
+    @apply flex flex-col justify-around pt-[2%] items-center h-[33%]
+}
+
+.input-container {
+    @apply relative h-auto
+}
+
+.email {
+    @apply border mb-[7%] h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-email {
+    @apply absolute  left-4 top-2 text-silver
+}
+
+.username {
+    @apply border mb-[7%] h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-username {
+    @apply absolute  left-4 top-2 text-silver
+}
+
+.password {
+    @apply border mb-[7%] h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-password {
+    @apply absolute left-4 top-2 text-silver
+}
+
+.re-password {
+    @apply border mb-[7%] h-10 rounded bg-blue-smooth pl-4 focus-within:outline-blue-md w-80
+}
+
+.placeholder-re-password {
+    @apply absolute left-4 top-2 text-silver
+}
+
+.submit {
+    @apply border border-blue-md bg-blue-md p-1 text-lg text-white w-80 rounded
+}
+
+.signup-link {
+    @apply text-blue-md hover:text-blue-light
+}
