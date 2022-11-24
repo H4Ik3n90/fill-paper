@@ -6,7 +6,6 @@ import loadable from '@loadable/component';
 // import layout and pages using async loadable
 import UserLayout from './Pages/userPages/userLayout';
 const Notes = loadable(() => import('./Pages/userPages/Notes'));
-const UserSetting = loadable(() => import('./Pages/userPages/userSetting'));
 
 // import layout and pages using async loadable
 import LoginLayout from './Pages/loginPages/loginLayout';
@@ -14,21 +13,28 @@ const Login = loadable(() => import('./Pages/loginPages/Login'));
 const Signup = loadable(() => import('./Pages/loginPages/Signup'));
 
 const App = () => {
-    // hidden or show state
-    const [show,setShow] = useState(true);
+    // hidden or show list data
+    const [listDataShow,setListDataShow] = useState(true);
 
-    // trigger to show and hide
-    const showEvent = () => {
-        setShow(!show);
+    // hidden or show user setting
+    const [settingShow,setSettingShow] = useState(false);
+
+    // trigger to show and hide list
+    const showList = () => {
+        setListDataShow(!listDataShow);
+    };
+
+    // trigger to show adn hide user setting
+    const showSetting = () => {
+        setSettingShow(!settingShow);
     };
 
     return (
         <>
             <Routes>
                 {/* user page route */}
-                <Route path='/' element={<UserLayout />}>
-                    <Route path='notes' element={<Notes showList={show} setShowList={() => showEvent()} />} />
-                    <Route path='setting' element={<UserSetting />} />
+                <Route path='/' element={<UserLayout showSetting={settingShow} setShowSetting={() => showSetting()} />}>
+                    <Route path='notes' element={<Notes showList={listDataShow} setShowList={() => showList()} />} />
                 </Route>
 
                 {/* login page route*/}
