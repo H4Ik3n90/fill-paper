@@ -9,7 +9,7 @@ const Setting = loadable(() => import('../userPages/Setting'));
 
 const userLayout = ({showSetting,setShowSetting}) => {
     // render setting page modal
-    let settingModal = showSetting === true ? <Setting setShowSetting={setShowSetting} /> : "";
+    let settingModal = showSetting === true ? <Setting setShowSetting={setShowSetting} showSetting={showSetting} /> : "";
 
     return (
         <>
