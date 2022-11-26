@@ -6,6 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "silver-very-light": "#FAFAFA",
+        "silver-light": "#EDEBEB",
         "silver": "#A9A9A9",
         "blue-smooth": "#F7FAFF",
         "blue-light": "#4D94FF",
