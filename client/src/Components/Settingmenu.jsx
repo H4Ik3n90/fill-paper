@@ -5,10 +5,13 @@ import React, {useState} from 'react';
 import ProfileUser from '../Images/userSetting/profileUser.svg';
 import Language from '../Images/userSetting/language.svg';
 
-const Settingmenu = ({menu,setMenuSelected}) => {
+const SettingMenu = ({menu,setMenuSelected}) => {
     return(
         // menu setting container
         <div className={`bg-silver-very-light h-[100%] w-56`}>
+            {/* Title */}
+            <h1 className='pl-5 pr-[5%] mt-[4%] mb-[3%]'>Setting</h1>
+
             {/* list of menu in sidebar setting */}
             <Menuchoosen openMenu={setMenuSelected} selected={menu} file={ProfileUser} width={21} height={21} text={"My Account"}/>
             <Menuchoosen openMenu={setMenuSelected} selected={menu} file={Language} width={21} height={21} text={"Language"}/>
@@ -25,4 +28,4 @@ const Menuchoosen = ({selected,openMenu,width,height,file,text,top}) => {
     );
 };
 
-export default Settingmenu;
+export default SettingMenu;

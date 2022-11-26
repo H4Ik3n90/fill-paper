@@ -14,7 +14,7 @@ module.exports = {
         "blue-dark": "#0F2039",
         "blue-dark-light": "#1C3B69",
         "blue-md": "#3F8CFF",
-        "semi-black": "rgba(0,0,0,0.2)"
+        "semi-black": "rgba(0,0,0,0.1)"
       },
       keyframes: {
         popin: {
@@ -27,7 +27,7 @@ module.exports = {
         },
       },
       animation: {
-        "pop-in": "popin 200ms linear",
+        "pop-in": "popin 200ms forwards",
         "pop-up": "popup 200ms forwards"
       }
     },

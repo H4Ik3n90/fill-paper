@@ -12,7 +12,7 @@ import settingIcon from '../Images/sideBar/setting_icon.svg';
 import profile from '../Images/sideBar/profile.svg';
 import trash from '../Images/sideBar/trash.svg';
 
-const Sidebar = ({showSetting,setShowSetting}) => {
+const Sidebar = ({settingShow,setSettingShow,closeSetting}) => {
     // hide status
     const [hide,setHide] = useState(false);
 
@@ -37,7 +37,7 @@ const Sidebar = ({showSetting,setShowSetting}) => {
             <CurrentLink to="/trash" width={15} height={15} text="Trash" file={trash} top="mt-1" />
 
             {/* User pages */}
-            <ButtonLink showSetting={showSetting} setShowSetting={setShowSetting} width={21} height={21} text="Setting" file={settingIcon} top="mt-6" />
+            <ButtonLink closeSetting={closeSetting} settingShow={settingShow} width={21} height={21} text="Setting" file={settingIcon} top="mt-6" />
 
             {/* sidebar showbar */}
             <div className={`absolute left-[1%] bottom-[1.5%]`} onClick={() => hideSidebar()}>
@@ -62,9 +62,9 @@ const CurrentLink = ({to,width,height,file,text,top}) => {
     );
 };
 
-const ButtonLink = ({showSetting,setShowSetting,width,height,file,text,top}) => {
+const ButtonLink = ({closeSetting,settingShow,width,height,file,text,top}) => {
     return(
-        <div onClick={setShowSetting} className={`${showSetting === true ? "bg-blue-dark-light" : ""} cursor-pointer flex ${top} pt-1 pb-1 ml-2 mr-2 mb-[1%] rounded pl-4`}>
+        <div onClick={closeSetting} className={`${settingShow === true ? "bg-blue-dark-light" : ""} cursor-pointer flex ${top} pt-1 pb-1 ml-2 mr-2 mb-[1%] rounded pl-4`}>
             <img src={file} alt="fill_paper_logo" width={width} height={height}/>
             <h1 className={`text-white text-[1em] ml-8 mr-2`}>{text}</h1>
         </div>

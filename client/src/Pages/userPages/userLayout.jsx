@@ -7,16 +7,13 @@ import {Outlet} from 'react-router-dom';
 import Sidebar from '../../Components/Sidebar';
 const Setting = loadable(() => import('../userPages/Setting'));
 
-const userLayout = ({showSetting,setShowSetting}) => {
-    // render setting page modal
-    let settingModal = showSetting === true ? <Setting setShowSetting={setShowSetting} showSetting={showSetting} /> : "";
-
+const userLayout = ({settingShow,setSettingShow,settingAnimation,closeSetting}) => {
     return (
         <>
             {/* setting page modal */}
-            {settingModal}
+            {settingShow && (<Setting closeSetting={closeSetting} setSettingShow={setSettingShow} settingAnimation={settingAnimation} />)}
             <div className='flex'>
-                <Sidebar showSetting={showSetting} setShowSetting={setShowSetting} />
+                <Sidebar settingShow={settingShow} setSettingShow={setSettingShow} closeSetting={closeSetting} />
                 <Outlet />
             </div>
         </>

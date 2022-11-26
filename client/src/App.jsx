@@ -19,21 +19,30 @@ const App = () => {
     // hidden or show user setting
     const [settingShow,setSettingShow] = useState(false);
 
+    // setting animation
+    const [settingAnimation,setSettingAnimation] = useState('');
+
     // trigger to show and hide list
     const showList = () => {
         setListDataShow(!listDataShow);
     };
 
     // trigger to show adn hide user setting
-    const showSetting = () => {
-        setSettingShow(!settingShow);
+    const closeSetting = () => {
+        const showSetting = !settingShow;
+
+        if(showSetting) {
+            setSettingShow(showSetting);
+        }
+
+        setSettingAnimation(showSetting ? "animate-pop-up" : "animate-pop-in");
     };
 
     return (
         <>
             <Routes>
                 {/* user page route */}
-                <Route path='/' element={<UserLayout showSetting={settingShow} setShowSetting={() => showSetting()} />}>
+                <Route path='/' element={<UserLayout closeSetting={closeSetting} settingShow={settingShow} setSettingShow={setSettingShow} settingAnimation={settingAnimation} />}>
                     <Route path='notes' element={<Notes showList={listDataShow} setShowList={() => showList()} />} />
                 </Route>
 
