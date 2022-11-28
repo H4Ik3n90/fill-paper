@@ -1,0 +1,5 @@
+.tooltip {
+    @apply hover:before:content-[attr(data-tooltip)] hover:before:text-white hover:before:bg-black hover:before:absolute hover:before:rounded
+    hover:before:p-1 hover:before:text-[0.8em] hover:before:whitespace-nowrap hover:before:bottom-[114%] hover:before:translate-x-[0%]
+    hover:before:animate-pop-up 
+}

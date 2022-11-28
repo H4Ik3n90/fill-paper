@@ -1,10 +1,15 @@
+// import dependencies here 
 import React, {useState} from 'react';
 import Card from '../Components/Card';
 import Searchbar from './Searchbar';
 
+// import add-on css style
+import '../style/ListData.css';
+
 // import some svg 
 import showBar from '../Images/listData/show_bar_single.svg';
 import addNote from '../Images/noteEdit/add.svg';
+import sortNote from '../Images/noteEdit/sort.svg';
 
 const ListData = ({showList,setShowList,listMode}) => {
     // change display in list data depends on listmode
@@ -23,7 +28,11 @@ const ListData = ({showList,setShowList,listMode}) => {
         }if(listMode === "tag") {
             // display tag mode
             const tagMode = {
-                title: "Tag"
+                title: "Tag",
+                element: {
+                    options: [],
+                    data: <Card show={showList} />
+                }
             };
 
             return tagMode;
@@ -31,7 +40,10 @@ const ListData = ({showList,setShowList,listMode}) => {
             // display trash mode
             const trashMode = {
                 title: "Trash",
-                element: <Card show={showList} />
+                element: {
+                    options: [],
+                    data: <Card show={showList} />
+                }
             }
 
             return trashMode;
@@ -55,14 +67,19 @@ const ListData = ({showList,setShowList,listMode}) => {
                 <p className={`text-sm pl-5 mt-8 ${showList === false ? "scale-x-0" : "delay-300"}`}>97 {resultMode.title}</p>
 
                 {/* add note button */}
-                <div className='absolute z-0 right-4 bottom-0 hover:bg-silver-light p-[0.2rem]'>
+                <div data-tooltip="Add Note" className='absolute z-0 right-[2.8rem] bottom-0 hover:bg-silver-light p-[0.2rem] tooltip'>
                     <img src={addNote} alt="add" />
+                </div>
+
+                {/* sort note button */}
+                <div data-tooltip="Sort Note" className='absolute z-0 right-[1rem] bottom-0 hover:bg-silver-light p-[0.2rem] tooltip'>
+                    <img src={sortNote} alt="sort" />
                 </div>
             </div>
 
             {/* list of notes */}
             <div className='mt-2 border-t-[1px] overflow-y-scroll max-h-[71%]'>
-                {resultMode.element}
+                {resultMode.element.data}
             </div>
 
             {/* hide and show button */}

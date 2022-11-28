@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 // import some svg
 import ProfileUser from '../Images/userSetting/profileUser.svg';
 import Language from '../Images/userSetting/language.svg';
+import Theme from '../Images/userSetting/theme.svg';
 
 const SettingMenu = ({menu,setMenuSelected}) => {
     return(
@@ -15,6 +16,7 @@ const SettingMenu = ({menu,setMenuSelected}) => {
             {/* list of menu in sidebar setting */}
             <Menuchoosen openMenu={setMenuSelected} selected={menu} file={ProfileUser} width={21} height={21} text={"My Account"}/>
             <Menuchoosen openMenu={setMenuSelected} selected={menu} file={Language} width={21} height={21} text={"Language"}/>
+            <Menuchoosen openMenu={setMenuSelected} selected={menu} file={Theme} width={21} height={21} text={"Theme"}/>
         </div>
     );
 };

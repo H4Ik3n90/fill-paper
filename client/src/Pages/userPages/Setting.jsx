@@ -6,13 +6,14 @@ import loadable from '@loadable/component';
 import Settingmenu from '../../Components/Settingmenu';
 const MyAccount = loadable(() => import('./MyAccount'));
 const Language = loadable(() => import('./Language'));
+const Theme = loadable(() => import('./Theme'));
 
 // import some svg files
 import closeMark from '../../Images/userSetting/close.svg';
 
 const Setting = ({setSettingShow,settingAnimation,closeSetting}) => {
     // selected menu 
-    const [menu,setMenuSelected] = useState('');
+    const [menu,setMenuSelected] = useState('My Account');
 
     // event openmenu
     const openMenu = (textMenu) => {
@@ -34,6 +35,7 @@ const Setting = ({setSettingShow,settingAnimation,closeSetting}) => {
     // conditional rendering setting pages
     let showMyAccount = menu == "My Account" ? <MyAccount /> : "";
     let showLanguage = menu == "Language" ? <Language /> : "";
+    let showTheme = menu == "Theme" ? <Theme /> : "";
 
     return(
         // modal background
@@ -46,6 +48,7 @@ const Setting = ({setSettingShow,settingAnimation,closeSetting}) => {
                 {/* setting pages */}
                 {showMyAccount}
                 {showLanguage}
+                {showTheme}
 
                 {/* close mark */}
                 <img src={closeMark} onClick={closeSetting} alt="close_mark" className='absolute z-10 right-[2%] top-[2%] cursor-pointer' width={20} height={20} />

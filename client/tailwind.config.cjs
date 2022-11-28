@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // light theme color palette
         "silver-very-light": "#FAFAFA",
         "silver-light": "#EDEBEB",
         "silver": "#A9A9A9",
@@ -15,6 +16,8 @@ module.exports = {
         "blue-dark-light": "#1C3B69",
         "blue-md": "#3F8CFF",
         "semi-black": "rgba(0,0,0,0.1)"
+
+        // dark theme color palette
       },
       keyframes: {
         popin: {
