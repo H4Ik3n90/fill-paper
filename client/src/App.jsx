@@ -6,6 +6,8 @@ import loadable from '@loadable/component';
 // import layout and pages using async loadable
 import UserLayout from './Pages/userPages/userLayout';
 const Notes = loadable(() => import('./Pages/userPages/Notes'));
+const Tag = loadable(() => import('./Pages/userPages/Tag'));
+const Trash = loadable(() => import('./Pages/userPages/Trash'));
 
 // import layout and pages using async loadable
 import LoginLayout from './Pages/loginPages/loginLayout';
@@ -44,6 +46,8 @@ const App = () => {
                 {/* user page route */}
                 <Route path='/' element={<UserLayout closeSetting={closeSetting} settingShow={settingShow} setSettingShow={setSettingShow} settingAnimation={settingAnimation} />}>
                     <Route path='notes' element={<Notes showList={listDataShow} setShowList={() => showList()} />} />
+                    <Route path='tag' element={<Tag showList={listDataShow} setShowList={() => showList()} />} />
+                    <Route path='trash' element={<Trash showList={listDataShow} setShowList={() => showList()} />} />
                 </Route>
 
                 {/* login page route*/}

@@ -11,6 +11,7 @@ import showBar from '../Images/sideBar/show_bar_double.svg';
 import settingIcon from '../Images/sideBar/setting_icon.svg';
 import profile from '../Images/sideBar/profile.svg';
 import trash from '../Images/sideBar/trash.svg';
+import tag from '../Images/sideBar/tag.svg';
 
 const Sidebar = ({settingShow,setSettingShow,closeSetting}) => {
     // hide status
@@ -34,6 +35,7 @@ const Sidebar = ({settingShow,setSettingShow,closeSetting}) => {
 
             {/* Notes usability pages */}
             <CurrentLink to="/notes" width={17} height={17} text="Notes" file={pencil} top={`${hide === true ? "mt-[32%]" : "mt-[12%]"}`} />
+            <CurrentLink to="/tag" width={15} height={15} text="Tag" file={tag} top="mt-1" />
             <CurrentLink to="/trash" width={15} height={15} text="Trash" file={trash} top="mt-1" />
 
             {/* User pages */}

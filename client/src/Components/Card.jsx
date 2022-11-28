@@ -5,7 +5,7 @@ import Delete from '../Images/noteEdit/delete.svg';
 
 const Card = ({show}) => {
     return (
-        <div className={`flex flex-col border-y active:border-y-blue-light pt-4 pb-4 ${show === false ? "scale-x-0" : "delay-300"}`}>
+        <div className={`flex flex-col border-b-[1px] pt-4 pb-4 ${show === false ? "scale-x-0" : "delay-300"}`}>
             {/* make card for note preview */}
             <div className='flex mb-2'>
                 <div className='ml-5'>
@@ -20,7 +20,9 @@ const Card = ({show}) => {
                 <p className='text-[0.7em] ml-5'>27/12/2020</p>
 
                 {/* delete logo */}
-                <img src={Delete} alt="delete_note" className='absolute right-[7%] bottom-0 cursor-pointer' width={14} height={14} />
+                <div className='absolute z-0 right-4 bottom-0 hover:bg-silver-light p-[0.2rem]'>
+                    <img src={Delete} alt="delete_note" width={14} height={14} />
+                </div>
             </div>
         </div>
     );
